@@ -25,9 +25,7 @@ type FilterItem = {
 };
 
 const CountProductByCategory = ({ data }: Props) => {
-  console.log(data);
-
-  const countByCategory = data.reduce((acc, product) => {
+  const countByCategory = data.reduce((acc: any, product) => {
     const { category } = product;
     if (acc[category]) {
       acc[category]++;
@@ -42,19 +40,6 @@ const CountProductByCategory = ({ data }: Props) => {
     x: countByCategory[category],
   }));
 
-  console.log(result);
-
-  const data2 = [
-    {
-      y: "samsung",
-      x: 5,
-    },
-    {
-      y: "apple",
-      x: 5,
-    },
-  ];
-
   return (
     <FlexibleWidthXYPlot yType="ordinal" height={500} yDistance={500}>
       <VerticalGridLines />
@@ -62,6 +47,7 @@ const CountProductByCategory = ({ data }: Props) => {
       <XAxis />
       <YAxis />
       <HorizontalBarSeries
+        barWidth={10}
         // className="vertical-bar-series-example"
         data={result}
       />

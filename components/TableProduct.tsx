@@ -23,7 +23,8 @@ const TableProduct = (props: Props) => {
   const [skip, setSkip] = useState(0);
   const [limit, setLimit] = useState(10);
 
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const fetcher = (arg: any, ...args: any) =>
+    fetch(arg, ...args).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
     `https://dummyjson.com/products?limit=${limit}&skip=${skip} `,
     fetcher
@@ -31,7 +32,7 @@ const TableProduct = (props: Props) => {
 
   console.log(data);
 
-  const handleDelete = (id) => {
+  const handleDelete = (id: number) => {
     console.log(id);
   };
 
@@ -61,7 +62,7 @@ const TableProduct = (props: Props) => {
             </tr>
           </thead>
           <tbody>
-            {data?.products.map((v, i) => {
+            {data?.products.map((v: any, i: number) => {
               return (
                 <tr
                   key={i}
