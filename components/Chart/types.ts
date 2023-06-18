@@ -1,3 +1,10 @@
+export type IProduct = {
+  products: Product[];
+  total: number;
+  skip: number;
+  limit: number;
+};
+
 export type Product = {
   id: number;
   title: string;

@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import useSWR from "swr";
+import { IProduct } from "./Chart/types";
 
-type Props = {};
+type Props = {
+  data: IProduct | null;
+};
 
-const TableProduct = (props: Props) => {
+const TableProduct = ({ data }: Props) => {
   const th = [
     "Title",
     "Description",
@@ -20,31 +22,9 @@ const TableProduct = (props: Props) => {
 
   const uiTd = "px-6 py-4";
 
-  const [skip, setSkip] = useState(0);
-  const [limit, setLimit] = useState(10);
-
-  const fetcher = (arg: any, ...args: any) =>
-    fetch(arg, ...args).then((res) => res.json());
-  const { data, error, isLoading } = useSWR(
-    `https://dummyjson.com/products?limit=${limit}&skip=${skip} `,
-    fetcher
-  );
-
-  console.log(data);
-
   const handleDelete = (id: number) => {
     console.log(id);
   };
-
-  const handlePrevious = () => {
-    setSkip(skip - limit);
-  };
-
-  const handleNext = () => {
-    setSkip(skip + limit);
-  };
-
-  console.log(skip, limit);
 
   return (
     <>
@@ -62,7 +42,7 @@ const TableProduct = (props: Props) => {
             </tr>
           </thead>
           <tbody>
-            {data?.products.map((v: any, i: number) => {
+            {data?.products?.map((v: any, i: number) => {
               return (
                 <tr
                   key={i}
@@ -92,17 +72,6 @@ const TableProduct = (props: Props) => {
             <tr></tr>
           </tbody>
         </table>
-      </div>
-      <div>
-        Showing {limit + skip} of {data?.total}
-      </div>
-      <div className="flex gap-3 items-end my-4">
-        {skip + limit > 10 ? (
-          <button onClick={() => handlePrevious()}>Previous</button>
-        ) : (
-          ""
-        )}
-        <button onClick={() => handleNext()}>Next</button>
       </div>
     </>
   );
