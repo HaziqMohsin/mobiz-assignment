@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import NextAuthSessionProvider from "./providers/sessionProvider";
 import Sidebar from "@/components/Sidebar";
 import { Providers } from "@/redux/provider";
+import MasterPage from "@/components/MasterPage";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,7 @@ export default function RootLayout({
         <Providers>
           <NextAuthSessionProvider>
             <Sidebar />
-            <div className="bg-orange-500 ml-64">{children}</div>
+            <MasterPage>{children}</MasterPage>
           </NextAuthSessionProvider>
         </Providers>
       </body>
