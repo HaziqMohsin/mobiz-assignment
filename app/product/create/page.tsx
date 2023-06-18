@@ -1,6 +1,9 @@
 "use client";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
+import { useRouter } from "next/navigation";
 
 type AddProductFormData = {
   title: string;
@@ -14,6 +17,8 @@ type AddProductFormData = {
 };
 
 const page = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const router = useRouter();
   const {
     register,
     setValue,
@@ -48,12 +53,17 @@ const page = () => {
         stock,
         brand,
         category,
-        /* other product data */
       }),
     })
       .then((res) => {
+        toast.success("Successfully added", {
+          autoClose: 5000,
+        });
         console.log(res);
         reset();
+        setTimeout(() => {
+          router.push("/product");
+        }, 5000);
       })
       .catch((err) => {
         console.log(err);
@@ -92,11 +102,11 @@ const page = () => {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label>Dicsount %</label>
+          <label>Discount %</label>
           <input
             className="px-4 py-2 border border-solid border-gray-400 rounded-md"
             type="text"
-            placeholder="discountPercentage"
+            placeholder="discount"
             {...register("discountPercentage")}
           />
         </div>
@@ -142,6 +152,7 @@ const page = () => {
         >
           Submit
         </button>
+        <ToastContainer />
       </form>
     </main>
   );

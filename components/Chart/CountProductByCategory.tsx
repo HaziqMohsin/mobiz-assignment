@@ -47,7 +47,9 @@ const CountProductByCategory = ({ data }: Props) => {
       <XAxis />
       <YAxis />
       <HorizontalBarSeries
-        barWidth={10}
+        barWidth={0.5}
+        yDistance={10}
+        width={100}
         // className="vertical-bar-series-example"
         data={result}
       />
