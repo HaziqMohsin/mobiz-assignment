@@ -17,6 +17,10 @@ reusable UI components for notification
 
 handling form like a champ!
 
+### Vercel Link
+
+[https://mobiz-assignment.vercel.app/](https://mobiz-assignment.vercel.app/)
+
 ##
 
 FORK the repository and follow the steps to complete the tasks. The final submission should include a) your github repository url b) your deployed website url
