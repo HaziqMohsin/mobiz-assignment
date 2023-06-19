@@ -5,11 +5,11 @@ import AverageRatingProducts from "@/components/Chart/AverageRatingProducts";
 // import CountProductByCategory from "@/components/Chart/CountProductByCategory";
 
 export default async function Home() {
-  const session = await getServerSession(authOptions);
+  //   const session = await getServerSession(authOptions);
 
-  if (!session) {
-    redirect("/api/auth/signin");
-  }
+  //   if (!session) {
+  //     redirect("/api/auth/signin");
+  //   }
 
   const res = await fetch("https://dummyjson.com/products?limit=100");
   const data = await res.json();
