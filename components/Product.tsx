@@ -70,7 +70,7 @@ const AllProduct = (props: Props) => {
     setSkip(skip + limit);
   };
 
-  console.log(dataSearch);
+  //   console.log(dataSearch);
 
   return (
     <>

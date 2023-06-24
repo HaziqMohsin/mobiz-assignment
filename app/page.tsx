@@ -1,6 +1,6 @@
 import AverageRatingProducts from "@/components/Chart/AverageRatingProducts";
 import CountProductByCategory2 from "@/components/Chart/CountProductByCategory2";
-import { Product, IProduct } from "@/components/Chart/types";
+import { IProduct } from "@/components/Chart/types";
 import TableProduct from "@/components/TableProduct";
 import Link from "next/link";
 

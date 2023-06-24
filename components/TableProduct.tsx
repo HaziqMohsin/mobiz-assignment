@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { IProduct } from "./Chart/types";
+import { IProduct, Product } from "./Chart/types";
+import Image from "next/image";
 
 type Props = {
   data: IProduct | undefined;
@@ -9,6 +10,7 @@ type Props = {
 
 const TableProduct = ({ data }: Props) => {
   const th = [
+    "Thumbnail",
     "Title",
     "Description",
     "Price",
@@ -42,12 +44,21 @@ const TableProduct = ({ data }: Props) => {
             </tr>
           </thead>
           <tbody>
-            {data?.products?.map((v: any, i: number) => {
+            {data?.products?.map((v: Product, i: number) => {
               return (
                 <tr
                   key={i}
                   className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 dark:text-white"
                 >
+                  <td className={`${uiTd} h-[100px] w-[100px]`}>
+                    <Image
+                      loading="lazy"
+                      src={v.thumbnail}
+                      alt={v.title}
+                      width={100}
+                      height={100}
+                    />
+                  </td>
                   <td className={uiTd}>{v.title}</td>
                   <td className={`${uiTd}`}>
                     <p className="line-clamp-2">{v.description}</p>

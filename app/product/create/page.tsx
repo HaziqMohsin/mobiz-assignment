@@ -39,7 +39,7 @@ const page = () => {
       brand,
       category,
     } = data;
-    console.log(data);
+    // console.log(data);
 
     fetch("https://dummyjson.com/products/add", {
       method: "POST",
@@ -59,7 +59,7 @@ const page = () => {
         toast.success("Successfully added", {
           autoClose: 5000,
         });
-        console.log(res);
+        // console.log(res);
         reset();
         setTimeout(() => {
           router.push("/product");
