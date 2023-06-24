@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { IProduct } from "./Chart/types";
 
 type Props = {
-  data: IProduct | null;
+  data: IProduct | undefined;
 };
 
 const TableProduct = ({ data }: Props) => {

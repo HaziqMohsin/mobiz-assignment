@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import useSWR from "swr";
 import TableProduct from "./TableProduct";
 import Link from "next/link";
+import CountProductByCategory2 from "./Chart/CountProductByCategory2";
+import { IProduct } from "./Chart/types";
 
 type Props = {};
 
@@ -25,13 +27,23 @@ const AllProduct = (props: Props) => {
   const [skip, setSkip] = useState(0);
   const [limit, setLimit] = useState(10);
   const [valueSearch, setValueSearch] = useState("");
-  const [dataSearch, setDataSearch] = useState(null);
+  const [dataSearch, setDataSearch] = useState<IProduct>();
+  const [selectedCategory, setSelectedCategory] = useState([]);
 
   useEffect(() => {
     if (valueSearch === "") {
-      setDataSearch(null);
+      setDataSearch(undefined);
     }
   }, [valueSearch]);
+
+  //   useEffect(() => {
+  //     fetch("https://dummyjson.com/products/categories")
+  //       .then(async (res) => {
+  //         const categories = await res.json();
+  //         console.log(categories);
+  //       })
+  //       .then(console.log);
+  //   }, []);
 
   const fetcher = (arg: any, ...args: any) =>
     fetch(arg, ...args).then((res) => res.json());
@@ -58,6 +70,8 @@ const AllProduct = (props: Props) => {
     setSkip(skip + limit);
   };
 
+  console.log(dataSearch);
+
   return (
     <>
       <div className="flex justify-between gap-4 items-center w-full">
@@ -78,7 +92,14 @@ const AllProduct = (props: Props) => {
       </div>
       <div className="relative overflow-x-auto my-4 w-full">
         {valueSearch !== "" ? (
-          <TableProduct data={dataSearch} />
+          <>
+            <TableProduct data={dataSearch} />
+            {dataSearch?.products && (
+              <div className="h-[300]">
+                <CountProductByCategory2 dataProduct={dataSearch?.products} />
+              </div>
+            )}
+          </>
         ) : (
           <TableProduct data={data} />
         )}
