@@ -13,7 +13,7 @@ function MasterPage({ children }: Props) {
   );
 
   return (
-    <div className={`${isSidebarOpen === true ? "ml-64" : "ml-14"}`}>
+    <div className={`${isSidebarOpen === true ? "md:ml-64" : "ml-0"}`}>
       {children}
     </div>
   );
