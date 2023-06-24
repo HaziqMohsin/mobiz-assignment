@@ -26,7 +26,7 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className="space-y-1.5 p-4 cursor-pointer"
+        className="space-y-1.5 p-4 cursor-pointer absolute"
         onClick={handleToggleSidebar}
       >
         <span className="block w-6 h-0.5 bg-gray-600"></span>
