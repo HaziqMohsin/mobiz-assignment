@@ -80,8 +80,11 @@ const page = () => {
             className="px-4 py-2 border border-solid border-gray-400 rounded-md"
             type="text"
             placeholder="title"
-            {...register("title")}
+            {...register("title", { required: true })}
           />
+          {errors.title && (
+            <div className="text-red-500 text-xs">Title is Required</div>
+          )}
         </div>
         <div className="flex flex-col gap-2">
           <label>Description</label>
@@ -89,8 +92,11 @@ const page = () => {
             className="px-4 py-2 border border-solid border-gray-400 rounded-md"
             type="text"
             placeholder="description"
-            {...register("description")}
+            {...register("description", { required: true })}
           />
+          {errors.description && (
+            <div className="text-red-500 text-xs">Description is Required</div>
+          )}
         </div>
         <div className="flex flex-col gap-2">
           <label>Price</label>
@@ -98,8 +104,11 @@ const page = () => {
             className="px-4 py-2 border border-solid border-gray-400 rounded-md"
             type="text"
             placeholder="price"
-            {...register("price")}
+            {...register("price", { required: true })}
           />
+          {errors.price && (
+            <div className="text-red-500 text-xs">Price is Required</div>
+          )}
         </div>
         <div className="flex flex-col gap-2">
           <label>Discount %</label>
@@ -107,8 +116,11 @@ const page = () => {
             className="px-4 py-2 border border-solid border-gray-400 rounded-md"
             type="text"
             placeholder="discount"
-            {...register("discountPercentage")}
+            {...register("discountPercentage", { required: true })}
           />
+          {errors.discountPercentage && (
+            <div className="text-red-500 text-xs">Discount is Required</div>
+          )}
         </div>
         <div className="flex flex-col gap-2">
           <label>Rating</label>
@@ -116,8 +128,11 @@ const page = () => {
             className="px-4 py-2 border border-solid border-gray-400 rounded-md"
             type="text"
             placeholder="rating"
-            {...register("rating")}
+            {...register("rating", { required: true })}
           />
+          {errors.rating && (
+            <div className="text-red-500 text-xs">Rating is Required</div>
+          )}
         </div>
         <div className="flex flex-col gap-2">
           <label>Stock</label>
@@ -125,8 +140,11 @@ const page = () => {
             className="px-4 py-2 border border-solid border-gray-400 rounded-md"
             type="text"
             placeholder="stock"
-            {...register("stock")}
+            {...register("stock", { required: true })}
           />
+          {errors.stock && (
+            <div className="text-red-500 text-xs">Stock is Required</div>
+          )}
         </div>
         <div className="flex flex-col gap-2">
           <label>Brand</label>
@@ -134,8 +152,11 @@ const page = () => {
             className="px-4 py-2 border border-solid border-gray-400 rounded-md"
             type="text"
             placeholder="brand"
-            {...register("brand")}
+            {...register("brand", { required: true })}
           />
+          {errors.brand && (
+            <div className="text-red-500 text-xs">Brand is Required</div>
+          )}
         </div>
         <div className="flex flex-col gap-2">
           <label>Category</label>
@@ -143,8 +164,11 @@ const page = () => {
             className="px-4 py-2 border border-solid border-gray-400 rounded-md"
             type="text"
             placeholder="category"
-            {...register("category")}
+            {...register("category", { required: true })}
           />
+          {errors.category && (
+            <div className="text-red-500 text-xs">Category is Required</div>
+          )}
         </div>
         <button
           type="submit"

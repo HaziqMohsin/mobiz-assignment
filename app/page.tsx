@@ -6,7 +6,7 @@ export default async function Home() {
   const data = await res.json();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+    <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-24">
       <AverageRatingProducts data={data.products} />
       <CountProductByCategory2 dataProduct={data.products} />
     </main>

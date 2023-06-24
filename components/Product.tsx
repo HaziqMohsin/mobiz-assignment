@@ -74,7 +74,7 @@ const AllProduct = (props: Props) => {
 
   return (
     <>
-      <div className="flex justify-between gap-4 items-center w-full">
+      <div className="flex flex-col md:flex-row justify-between gap-4 items-center w-full">
         <AddProductLink />
         <div className="flex gap-3 justify-center items-center">
           <input

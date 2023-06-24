@@ -13,7 +13,7 @@ const AverageRatingProducts = ({ data }: Props) => {
 
   return (
     <div className="">
-      <div className="">
+      <div className="text-center">
         Average rating of all products:{" "}
         <span className="font-bold text-lg">{averageRating}</span>
       </div>
