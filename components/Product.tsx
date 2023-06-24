@@ -93,11 +93,13 @@ const AllProduct = (props: Props) => {
       <div className="relative overflow-x-auto my-4 w-full">
         {valueSearch !== "" ? (
           <>
-            <TableProduct data={dataSearch} />
             {dataSearch?.products && (
-              <div className="h-[300]">
-                <CountProductByCategory2 dataProduct={dataSearch?.products} />
-              </div>
+              <>
+                <TableProduct data={dataSearch} />
+                <div className="h-[300]">
+                  <CountProductByCategory2 dataProduct={dataSearch?.products} />
+                </div>
+              </>
             )}
           </>
         ) : (
