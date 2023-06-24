@@ -12,10 +12,10 @@ const AverageRatingProducts = ({ data }: Props) => {
   const averageRating = totalRating / data.length;
 
   return (
-    <div className="">
-      <div className="text-center">
-        Average rating of all products:{" "}
-        <span className="font-bold text-lg">{averageRating}</span>
+    <div className="border border-solid border-gray-300 rounded-md p-4">
+      <div className="text-center flex flex-col">
+        <div>Average rating of all products: </div>
+        <div className="font-bold text-lg">{averageRating}</div>
       </div>
     </div>
   );

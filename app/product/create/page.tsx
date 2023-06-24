@@ -71,7 +71,7 @@ const page = () => {
   });
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-24 ">
+    <main className="flex min-h-screen flex-col items-center justify-center p-4 pt-24 md:p-24 ">
       <div className="text-2xl font-bold mb-4">Add Product</div>
       <form onSubmit={onSubmit} className="flex flex-col gap-3 w-full">
         <div className="flex flex-col gap-2">

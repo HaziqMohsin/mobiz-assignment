@@ -73,7 +73,7 @@ const CountProductByCategory2 = ({ dataProduct }: Props) => {
   };
 
   return (
-    <div className="my-4">
+    <div className="border border-solid border-gray-300 rounded-md p-4">
       <Bar options={options} data={data} height={300} width={300} />
     </div>
   );
