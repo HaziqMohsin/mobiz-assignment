@@ -44,6 +44,7 @@ const CountProductByCategory2 = ({ dataProduct }: Props) => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "top" as const,
@@ -73,7 +74,7 @@ const CountProductByCategory2 = ({ dataProduct }: Props) => {
 
   return (
     <div className="my-4">
-      <Bar options={options} data={data} height={300} />
+      <Bar options={options} data={data} height={300} width={300} />
     </div>
   );
 };
