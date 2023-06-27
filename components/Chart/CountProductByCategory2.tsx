@@ -65,7 +65,7 @@ const CountProductByCategory2 = ({ dataProduct }: Props) => {
     labels: Object?.keys(labelProduct),
     datasets: [
       {
-        label: "Dataset 1",
+        label: "product",
         data: Object?.values(labelProduct),
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
